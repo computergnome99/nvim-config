@@ -29,9 +29,9 @@ nvim
 
 `vim.pack` installs the configured plugins on first startup. To inspect pending
 updates, run `:lua vim.pack.update(nil, { offline = true })`; to update plugins,
-run `:lua vim.pack.update()`.
-The generated `nvim-pack-lock.json` records installed revisions; keep it under
-version control to reproduce your plugin versions.
+run `:lua vim.pack.update()`. The generated `nvim-pack-lock.json` records
+installed revisions; keep it under version control to reproduce your plugin
+versions.
 
 ## Organization
 
@@ -41,5 +41,6 @@ version control to reproduce your plugin versions.
 - `lua/kickstart/plugins/` contains optional examples. Load one explicitly from
   `init.lua`, for example `require('kickstart.plugins.indent_line')`.
 
-Treesitter uses its current `main` branch. The MDX plugin maps `.mdx` buffers to
-the Markdown parser, with TSX/TypeScript injections enabled.
+Treesitter uses its current `main` branch. Markdown buffers use Neovim's native
+syntax highlighting, while MDX buffers use the Markdown parser with TSX/
+TypeScript injections enabled. Harper is configured for Markdown, MDX, and YAML.

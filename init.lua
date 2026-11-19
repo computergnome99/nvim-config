@@ -300,7 +300,7 @@ local servers = {
       },
     },
   },
-  harper_ls = { filetypes = { 'mdx', 'yaml' } },
+  harper_ls = { filetypes = { 'markdown', 'mdx', 'yaml' } },
 }
 
 local ensure_installed = vim.tbl_keys(servers)

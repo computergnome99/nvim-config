@@ -39,6 +39,12 @@ end
 vim.api.nvim_create_autocmd('FileType', {
   group = group,
   callback = function(args)
+    if args.match == 'markdown' then
+      vim.treesitter.stop(args.buf)
+      vim.bo[args.buf].syntax = 'markdown'
+      return
+    end
+
     local language = vim.treesitter.language.get_lang(args.match)
     if not language then return end
 
